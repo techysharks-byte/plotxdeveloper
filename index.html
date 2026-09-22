@@ -234,6 +234,16 @@
     body { padding-bottom: 64px; }
   }
 </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18375878699"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18375878699');
+</script>
 </head>
 <body>
 
@@ -675,6 +685,13 @@
 
     form.style.display = 'none';
     document.getElementById('thank-you').style.display = 'block';
+
+    // Google Ads conversion — fires when the visitor sees the thank-you confirmation.
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18375878699/7yKdCPDwioEdEKvQprpE'
+      });
+    }
   });
 </script>
 
